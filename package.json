@@ -7,9 +7,9 @@
   },
   "scripts": {
     "install:ci": "bash scripts/install-ci.sh",
-    "dev": "vite",
-    "build": "bash scripts/build-verified.sh",
-    "start": "vinext start",
+    "dev": "next dev",
+    "build": "next stat",
+    "start": "next start",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "validate:artifact": "bash scripts/validate-artifact.sh",
     "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
