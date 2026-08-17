@@ -4,7 +4,7 @@ title RoboEngineer AI
 cd /d "%~dp0"
 echo.
 echo ========================================
-echo   RoboEngineer AI V1.0
+echo   RoboEngineer AI V1.2
 echo ========================================
 echo.
 if not exist "node_modules" (
@@ -18,8 +18,8 @@ if not exist "node_modules" (
   )
 )
 echo Starting local website...
-echo Open http://localhost:5173 in your browser.
+echo Open http://localhost:3000 in your browser.
 echo Press Ctrl+C to stop.
 echo.
-call npx vite
+call npm run dev
 pause

@@ -1,4 +1,4 @@
-# RoboEngineer AI V1.1
+# RoboEngineer AI V1.2
 
 面向机械臂开发者的一人公司 MVP：从参数输入、力矩计算、电机选型到基础 BOM，在浏览器内完成完整闭环。
 
@@ -6,7 +6,7 @@
 
 双击 start-roboengineer.bat。首次运行会自动安装依赖，以后不会重复安装。
 
-启动成功后打开 http://localhost:5173。
+启动成功后打开 http://localhost:3000。
 
 ## 命令行启动
 
@@ -37,6 +37,26 @@
 - 创始人运营看板与转化漏斗
 - 运营数据、投票和反馈一键导出
 - 手机、平板和桌面响应式布局
+- Vercel Web Analytics 访问统计
+- Supabase 集中收集反馈、路线图投票和 Pro/Team 付费意向
+- Supabase 提交失败时保留浏览器本机数据
+
+## Supabase 配置
+
+复制 `.env.example` 为 `.env.local`，填写 Supabase 项目的公开连接信息：
+
+    NEXT_PUBLIC_SUPABASE_URL=https://你的项目.supabase.co
+    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_你的密钥
+
+Vercel 部署时，在项目的 Environment Variables 中配置同名变量。只使用 Publishable Key；不要在前端或 GitHub 中保存数据库密码、Secret Key 或 service_role。
+
+网站只在用户主动提交时写入以下表：
+
+- `feedback`
+- `feature_votes`
+- `pricing_interests`
+
+工程参数、保存的方案和本地运营漏斗仍保存在当前浏览器。
 
 ## 计算假设
 
@@ -49,4 +69,4 @@
 
 ## 一人公司验证指标
 
-点击导航栏“运营看板”，可以查看成功计算、进入选型、查看 BOM、导出方案、保存项目和付费意向等本地数据。上线后再把同样的事件接入 Plausible 或 PostHog，用真实用户数据决定下一步开发方向。
+点击导航栏“运营看板”，可以查看成功计算、进入选型、查看 BOM、导出方案、保存项目和付费意向等本地数据。Vercel Analytics 用于汇总访问量；Supabase 用于汇总用户主动提交的反馈、投票和付费意向。
