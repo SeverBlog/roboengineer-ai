@@ -22,23 +22,22 @@
       "@/*": ["./*"]
     }
   },
-  "include": [
+   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    ".next/types/**/*.ts"
   ],
   "exclude": [
-  "node_modules",
-  "build",
-  "db",
-  "drizzle",
-  "examples",
-  "scripts",
-  "tests",
-  "worker",
-  "vite.config.ts",
-  "drizzle.config.ts"
-]
+    "node_modules",
+    "build",
+    "db",
+    "drizzle",
+    "examples",
+    "scripts",
+    "tests",
+    "worker",
+    "vite.config.ts",
+    "drizzle.config.ts"
+  ]
+}
